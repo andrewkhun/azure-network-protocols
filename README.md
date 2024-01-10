@@ -129,3 +129,44 @@ On VM-1, open up Microsoft Edge and search for and install 'Wireshark'. Download
 <p>
 <img src="https://imgur.com/GqutGMk.png" height="70%" width="70%" alt="Linux VM"/>
 </p>
+
+
+<br /><h3>Step 6 - Observe ICMP Traffic </h3>
+<p>
+Open and run Wireshark as an administrator and start capturing packets (blue fin icon). You will see traffic being capture even though we are not actively doing anything within the VM.
+</p>
+<p>
+<img src="https://imgur.com/u1O5Lgz.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+In the filter bar, type in 'icmp' to display only ICMP traffic. ICMP is used for reporting errors and performing network diagnostics. The filter will be used to observe what happens when we ping VM-2 from VM-1
+</p>
+<p>
+<img src="https://imgur.com/ZHHssq4.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+In order to ping VM-2 we must first obtain its 'Private IP Address'. We are using the Private IP Address as opposed to the Public IP Address because VM-2 is on the same virtual network as VM-1 and should allow for local communication. 
+
+Head back into the Azure Portal from your local machine and Select 'VM-2' under 'Virtual Machines'. Locate the 'Private IP Address' and copy it.
+</p>
+<p>
+<img src="https://imgur.com/dk63Ppv.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+Head back into VM-1 and open Windows Powershell. In the command line enter 'ping [VM-2's Private IP Address] and hit enter. ICMP traffic should then populate Wireshark as the ping goes through.
+</p>
+<p>
+<img src="https://imgur.com/GXOeU36.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+<img src="https://imgur.com/sXNKCxJ.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+On Windows Powershell, enter ping [VM-2 Private IP Address] -t. This command will send a perpetual ping to VM-2, resulting in nonstop ICMP traffic being displayed in Wireshark.
+</p>
+<p>
+<img src="https://imgur.com/p5kmnpv.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+<img src="https://imgur.com/ZaTMIOM.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
