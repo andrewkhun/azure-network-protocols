@@ -38,7 +38,7 @@ Please note in order to complete this lab you must create a Microsoft Azure acco
 - Step 12 - Clean Up Resources
 
 
-<br /><h3>Step 1 - Make a Resource Group</h3>
+<br /><h2>Step 1 - Make a Resource Group</h2>
 <p>
 In the Azure Portal go to 'Resouce Groups' to create a new Resource Group and name it 'RG-Lab'. Take note of the region of the Resource Group as we will place our virtual machines in the same region to keep things consistent.
 </p>
@@ -55,7 +55,7 @@ In the Azure Portal go to 'Resouce Groups' to create a new Resource Group and na
 
 
 
-<br /><h3>Step 2 - Create a Windows 10 Virtual Machine</h3>
+<br /><h2>Step 2 - Create a Windows 10 Virtual Machine</h2>
 <p>
 After creating the Resource Group, go to 'Virtual Machines' and click 'Create' to create an Azure Virtual Machine.
 </p>
@@ -86,7 +86,7 @@ Notice a 'Virtual Network' was automatically created by the VM. We will be using
 </p>
 
 
-<br /><h3>Step 3 - Create a Linux Virtual Machine</h3>
+<br /><h2>Step 3 - Create a Linux Virtual Machine</h2>
 <p>
 Next we will be creating our second virtual machine. The initial process is the same. Create the VM and place it inside 'RG-Lab' and name it 'VM-2'. Place the VM in the same region as VM-1 and the Resource Group (US West 3).
 </p>
@@ -107,7 +107,7 @@ In the 'Networking', select the existing 'Virtual Network' that was created duri
 </p>
 
 
-<br /><h3>Step 4 - Remote into the Windows 10 VM (VM-1)</h3>
+<br /><h2>Step 4 - Remote into the Windows 10 VM (VM-1)</h2>
 <p>In order to remotely conenct into 'VM-1' you must first obtain its 'Public IP Address'. Go to 'Virtual Machines' in the Azure Portal and select 'VM-1'. Copy down the 'Public IP Address' and head back to the desktop.
 </p>
 <p>
@@ -121,7 +121,7 @@ In the Windows 'Start' menu, search for 'Remote Desktop Connection'. Input the P
 </p>
 
 
-<br /><h3>Step 5 - Install Wireshark </h3>
+<br /><h2>Step 5 - Install Wireshark </h2>
 <p>
 On VM-1, open up Microsoft Edge and search for and install 'Wireshark'. Download the 'Windows x64 Installer'. Once the download has completed, locate the installer and proceed with installing 'Wireshark' on VM-1.
 </p>
@@ -133,7 +133,7 @@ On VM-1, open up Microsoft Edge and search for and install 'Wireshark'. Download
 </p>
 
 
-<br /><h3>Step 6 - Observe ICMP Traffic </h3>
+<br /><h2>Step 6 - Observe ICMP Traffic </h2>
 <p>
 Open and run Wireshark as an administrator and start capturing packets (blue fin icon). You will see traffic being capture even though we are not actively doing anything within the VM.
 </p>
@@ -175,7 +175,7 @@ On Windows Powershell, enter ping [VM-2 Private IP Address] -t. This command wil
 
 
 
-<br /><h3>Step 7 - Access Network Security Groups</h3>
+<br /><h2>Step 7 - Access Network Security Groups</h2>
 <p>
 In this step we will use Azure's Network Security Groups to setup an Inbound Rule to Deny ICMP traffic. Once the rule is in place we will observe what happens to the perpetual ping that was set in motion at the end of the last step.
 
@@ -200,7 +200,7 @@ Now go back to VM-1 and observe the pings. You should now find the ping requests
 </p>
 
 
-<br /><h3>Step 8 - Observe SSH Traffic</h3>
+<br /><h2>Step 8 - Observe SSH Traffic</h2>
 <p>
 In order to observe SSH traffic, type 'ssh' into the Wireshark filter on VM-1.
 
@@ -227,7 +227,7 @@ When finished, you can enter the command 'exit' to end the SSH session.
 </p>
 
 
-<br /><h3>Step 9 - Observe DHCP Traffic</h3>
+<br /><h2>Step 9 - Observe DHCP Traffic</h2>
 <p>
 Filter DHCP traffic in Wireshark by entering ‘dhcp’ in the filter bar. DHCP assigns IP addresses to devices after they join a network. We can reassign the IP address of VM-1 by going to powershell and entering the command ipconfig /renew. Wireshark will display DHCP traffic.
 </p>
@@ -239,7 +239,7 @@ Filter DHCP traffic in Wireshark by entering ‘dhcp’ in the filter bar. DHCP 
 </p>
 
 
-<br /><h3>Step 10 - Observe DNS Traffic</h3>
+<br /><h2>Step 10 - Observe DNS Traffic</h2>
 <p>
 To observe DNS traffic in Wireshark enter ‘dns’ into the Wireshark filter bar. Then, in Powershell type the command ‘nslookup www.google.com’ and observe the DNS traffic in Wireshark.
 </p>
@@ -253,7 +253,7 @@ To observe DNS traffic in Wireshark enter ‘dns’ into the Wireshark filter ba
 
 
 
-<br /><h3>Step 11 - Observe RDP Traffic</h3>
+<br /><h2>Step 11 - Observe RDP Traffic</h2>
 <p>
 Filter RDP traffic in Wireshark by entering 'tcp.port==3389' or 'rdp' in the filter bar and you’ll notice non-stop traffic. This is because of our live remote desktop connection. It displays a live-stream from one computer to another, therefore traffic is always being transmitted.
 </p>
@@ -262,7 +262,7 @@ Filter RDP traffic in Wireshark by entering 'tcp.port==3389' or 'rdp' in the fil
 </p>
 
 
-<br /><h3>Step 12 - Clean Up Resources</h3>
+<br /><h2>Step 12 - Clean Up Resources</h2>
 <p>
 End the Remote Connection by entering 'logoff' in powershell or hitting the X from the Remote Desktop Connection Toolbar at the top of the screen.
 </p>
