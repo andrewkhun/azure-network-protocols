@@ -103,3 +103,12 @@ In the 'Networking', select the existing 'Virtual Network' that was created duri
 <p>
 <img src="https://imgur.com/MJa61Jb.png" height="70%" width="70%" alt="Linux VM"/>
 </p>
+
+
+<br /><h3>Step 4 - Remote into the Windows 10 VM (VM-1)</h3>
+<p>In order to remotely conenct into 'VM-1' you must first obtain its 'Public IP Address'. Go to 'Virtual Machines' in the Azure Portal and select 'VM-1'. Copy down the 'Public IP Address' and head back to the desktop.
+</p>
+<p>
+<img src="https://imgur.com/MJa61Jb.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+
