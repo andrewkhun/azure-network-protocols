@@ -109,6 +109,11 @@ In the 'Networking', select the existing 'Virtual Network' that was created duri
 <p>In order to remotely conenct into 'VM-1' you must first obtain its 'Public IP Address'. Go to 'Virtual Machines' in the Azure Portal and select 'VM-1'. Copy down the 'Public IP Address' and head back to the desktop.
 </p>
 <p>
-<img src="https://imgur.com/MJa61Jb.png" height="70%" width="70%" alt="Linux VM"/>
+<img src="https://imgur.com/HUe8u4r.png" height="70%" width="70%" alt="Linux VM"/>
 </p>
-
+<p>
+<img src="https://imgur.com/OIeuXLE.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+In the Windows 'Start' menu, search for 'Remote Desktop Connection'. Input the Public IP Address of VM-1 and click 'Connect'. A prompt will request your credentials, enter the Username and Password created when VM-1 was setup and hit enter. The desktop will setup and you will have successfully logged into the VM.
+</p>
