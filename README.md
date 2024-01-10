@@ -5,7 +5,9 @@
 <h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
 In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups.<br /><br />
 
+<p>
 Please note in order to complete this lab you must create a Microsoft Azure account and have an active subscription!
+</p>
 
 <br /><h2>Environments and Technologies Used</h2>
 
@@ -280,5 +282,5 @@ Head into the Azure Portal and select 'Resource Groups'. Delete the Resource Gro
 <img src="https://imgur.com/Tm6DOtx.png" height="70%" width="70%" alt="Linux VM"/>
 </p>
 <p>
-Double check that the Resource Groups have been deleted along both of the Virtual Machines and its resources to prevent accumulating any costs on Azure. This concludes the lab!
+Double check that the Resource Groups have been deleted along with both of the Virtual Machines and its resources to prevent accumulating any costs on Azure. This concludes the lab!
 </p>
