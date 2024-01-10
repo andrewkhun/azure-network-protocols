@@ -117,3 +117,15 @@ In the 'Networking', select the existing 'Virtual Network' that was created duri
 <p>
 In the Windows 'Start' menu, search for 'Remote Desktop Connection'. Input the Public IP Address of VM-1 and click 'Connect'. A prompt will request your credentials, enter the Username and Password created when VM-1 was setup and hit enter. The desktop will setup and you will have successfully logged into the VM.
 </p>
+
+
+<br /><h3>Step 5 - Install Wireshark </h3>
+<p>
+On VM-1, open up Microsoft Edge and search for and install 'Wireshark'. Download the 'Windows x64 Installer'. Once the download has completed, locate the installer and proceed with installing 'Wireshark' on VM-1.
+</p>
+<p>
+<img src="https://imgur.com/B04C31W.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+<img src="https://imgur.com/GqutGMk.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
