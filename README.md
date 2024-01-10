@@ -63,33 +63,43 @@ After creating the Resource Group, go to 'Virtual Machines' and click 'Create' t
 <p>
 <img src="https://imgur.com/uSSHRJb.png" height="70%" width="70%" alt="Create VM 2"/>
 </p>
-<br /><p>
+<p>
 Place the Virtual Machine into the 'RG-Lab' Resource group previously created. Name the VM (Virtual Machine) 'VM-1' and place it into the same region as 'RG-Lab', in this example it is 'West US 3'. Select 'Windows 10 Pro, version 22H2' for the VM Image. 
 </p>
 <p>
 <img src="https://imgur.com/SX6GR61.png" height="70%" width="70%" alt="Create VM 3"/>
 </p>
-<br /><p>
+<p>
 For 'Size', select '2 vcpus'. Set an Administrator account by creating a username and password. Note the credentials down as we will be using this to log into the VM later. Check the licensing agreement and then make your way to the 'Networking' tab.
 </p>
 <p>
 <img src="https://imgur.com/mYb7SUU.png" height="70%" width="70%" alt="Create VM 3"/>
 </p>
 
+<p>
+Notice a 'Virtual Network' was automatically created by the VM. We will be using this Virtual Network to view traffic between VM-1 and our second virtual machine, VM-2. After confirming the virtual network has been created, click 'Review + Create' and once validation has passed, select 'Create' and VM-1 will begin setting up.
+</p>
+<p>
+<img src="https://imgur.com/qdo187E.png" height="70%" width="70%" alt="Network Interface"/>
+</p>
 
 
+<br /><h3>Step 3 - Create a Linux Virtual Machine</h3>
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+Next we will be creating our second virtual machine. The initial process is the same. Create the VM and place it inside 'RG-Lab' and name it 'VM-2'. Place the VM in the same region as VM-1 and the Resource Group (US West 3).
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/dmV0YNG.png" height="70%" width="70%" alt="Linux VM"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Select '2 vcpus' for the 'Size'. Check the 'Password' Option for 'Authentication Type' as it is set to 'SSH Public Key' by default, then create a Username and Password and note it down for future use.
 </p>
-<br />
+<p>
+<img src="https://imgur.com/O1sMvTp.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+In the 'Networking', select the existing 'Virtual Network' that was created during VM-1's setup. This will ensure both VMs are on the same network and can communicate with one another. After confirming this, select 'Review + Create', and if validation has passed, click 'Create' to set up the Linux virtual machine.
+</p>
+<p>
+<img src="https://imgur.com/MJa61Jb.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
