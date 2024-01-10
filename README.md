@@ -28,7 +28,7 @@ Please note in order to complete this lab you must create a Microsoft Azure acco
 - Step 4 - Remote Desktop into the Windows VM
 - Step 5 - Install Wireshark
 - Step 6 - Observe ICMP Traffic
-- Step 7 - Access Network Security Group
+- Step 7 - Access Network Security Groups
 - Step 8 - Observe SSH Traffic
 - Step 9 - Observe DHCP Traffic
 - Step 10 - Observe DNS Traffic
@@ -170,3 +170,81 @@ On Windows Powershell, enter ping [VM-2 Private IP Address] -t. This command wil
 <p>
 <img src="https://imgur.com/ZaTMIOM.png" height="70%" width="70%" alt="Linux VM"/>
 </p>
+
+
+
+<br /><h3>Step 7 - Access Network Security Groups</h3>
+<p>
+In this step we will use Azure's Network Security Groups to setup an Inbound Rule to Deny ICMP traffic. Once the rule is in place we will observe what happens to the perpetual ping that was set in motion at the end of the last step.
+
+Access the Azure Portal and search 'Network Seccurity Groups'. Once selected, you should see security groups for our two VMs. Select VM-2. 
+</p>
+<p>
+<img src="https://imgur.com/CQZLEXO.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+Once inside the VM-2 Network Security Group, select 'Inbound security rules' then select 'Add' to add a new inbound security rule.
+</p>
+<p>
+<img src="https://imgur.com/s1bueas.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+Make sure the 'Source' and 'Destination' is set to 'Any'. Select 'ICMP' under the 'Protocol' heading to specify ICMP traffic. Under 'Action' select 'Deny' and set the 'Priority' to '200'. Once complete, click 'Add'. With this rule, VM-2 will deny any ICMP traffic from arriving. The priority has been set to 200 to place this rule before any other rule we currently have, giving it precedence over them. 
+
+Now go back to VM-1 and observe the pings. You should now find the ping requests have timed out due to the blocked traffic. In order to reverse this, go back into the Azure Portal and edit the inbound rule we just created and select 'Allow' instead of 'Deny' to once again allow ICMP traffic.
+</p>
+<p>
+<img src="https://imgur.com/AEPpx0r.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+
+
+<br /><h3>Step 8 - Observe SSH Traffic</h3>
+<p>
+In order to observe SSH traffic, type 'ssh' into the Wireshark filter on VM-1.
+
+Next, go to Windows Powershell and input the command 'ssh labuser@[VM2's Private IP Address], then hit enter. This command will allow us to create an SSH connection to the Linux VM.
+
+Enter 'yes' and it will ask for the password of VM-2. Enter the password that was created during the VM-2 setup. 
+
+Note: When typing the password into the command line for VM-2, text will not appear. Ensure you spell the password correctly and hit 'Enter' and an SSH connection will be established.
+</p>
+<p>
+<img src="https://imgur.com/PeC6OxY.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+Typing in commands such as 'uname -a', 'id', 'pwd', or 'sudo apt' will display traffic on Wireshark. 
+</p>
+<p>
+<img src="https://imgur.com/6MIt5ST.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+<img src="https://imgur.com/1R2MWXW.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+When finished, you can enter the command 'exit' to end the SSH session.
+</p>
+
+
+<br /><h3>Step 9 - Observe DHCP Traffic</h3>
+<p>
+Filter DHCP traffic in Wireshark by entering ‘dhcp’ in the filter bar. DHCP assigns IP addresses to devices after they join a network. We can reassign the IP address of VM-1 by going to powershell and entering the command ipconfig /renew. Wireshark will display DHCP traffic.
+</p>
+<p>
+<img src="https://imgur.com/6dZuplc.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+<img src="https://imgur.com/mBXBY8u.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+
+
+<br /><h3>Step 9 - Observe DNS Traffic</h3>
+<p>
+To observe DNS traffic in Wireshark enter ‘dns’ into the Wireshark filter bar. Then, in Powershell type the command ‘nslookup www.google.com’ and observe the DNS traffic in Wireshark.
+</p>
+<p>
+<img src="https://imgur.com/FrQ3nGv.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+<img src="https://imgur.com/I7y1wTk.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+
