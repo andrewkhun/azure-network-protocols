@@ -237,7 +237,7 @@ Filter DHCP traffic in Wireshark by entering ‘dhcp’ in the filter bar. DHCP 
 </p>
 
 
-<br /><h3>Step 9 - Observe DNS Traffic</h3>
+<br /><h3>Step 10 - Observe DNS Traffic</h3>
 <p>
 To observe DNS traffic in Wireshark enter ‘dns’ into the Wireshark filter bar. Then, in Powershell type the command ‘nslookup www.google.com’ and observe the DNS traffic in Wireshark.
 </p>
@@ -248,3 +248,37 @@ To observe DNS traffic in Wireshark enter ‘dns’ into the Wireshark filter ba
 <img src="https://imgur.com/I7y1wTk.png" height="70%" width="70%" alt="Linux VM"/>
 </p>
 
+
+
+
+<br /><h3>Step 11 - Observe RDP Traffic</h3>
+<p>
+Filter RDP traffic in Wireshark by entering 'tcp.port==3389' or 'rdp' in the filter bar and you’ll notice non-stop traffic. This is because of our live remote desktop connection. It displays a live-stream from one computer to another, therefore traffic is always being transmitted.
+</p>
+<p>
+<img src="https://imgur.com/3Q7vonX.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+
+
+<br /><h3>Step 12 - Clean Up Resources</h3>
+<p>
+End the Remote Connection by entering 'logoff' in powershell or hitting the X from the Remote Desktop Connection Toolbar at the top of the screen.
+</p>
+<p>
+<img src="https://imgur.com/hveoCe4.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+<img src="https://imgur.com/TnxUOd3.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+Head into the Azure Portal and select 'Resource Groups'. Delete the Resource Groups generated during this lab by selecting each Resource Group and selecting 'Delete Resource Group'. A prompt will appear requesting you to input the name of the Resource Group to confirm deletion. Copy and paste the name of the Resource Group into the field and hit 'Delete'.
+</p>
+<p>
+<img src="https://imgur.com/czjCZ1Z.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+<img src="https://imgur.com/Tm6DOtx.png" height="70%" width="70%" alt="Linux VM"/>
+</p>
+<p>
+Double check that the Resource Groups have been deleted along both of the Virtual Machines and its resources to prevent accumulating any costs on Azure. This concludes the lab!
+</p>
